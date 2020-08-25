@@ -1,4 +1,4 @@
-# TryHackMe-Wonderland
+# Wonderland
 
 _24th August 2020_
 
