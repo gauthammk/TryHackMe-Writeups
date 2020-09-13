@@ -2,7 +2,7 @@
 
 _24th August 2020_
 
-## Nmap Scan
+## Host enumeration
 
 The initial scan reports the following.
 
@@ -15,7 +15,7 @@ The initial scan reports the following.
 
 Since HTTP is running on port 80, we can proceed to view the web page on `http://<IP>/`
 
-## Enumeration
+## Web enumeration
 
 Initial enumerations with wfuzz and `directory-list-medium` reveals a directory `/r` on the web server. Going with the general theme, `/a`, `/b`, `/i` and `/t` are all valid subdirectories. So, we navigate to `http://<IP>/r/a/b/b/i/t/` and sure enough, it gives us a web page.
 
@@ -24,9 +24,7 @@ Initial enumerations with wfuzz and `directory-list-medium` reveals a directory 
 A piece of code like so exists in the source code and seems to be the credentials for the user (alice).
 
 ```html
-<p style="display: none;">
-  alice:password
-</p>
+<p style="display: none;">alice:password</p>
 ```
 
 ## SSH
@@ -129,7 +127,7 @@ hatter@wonderland:/home/rabbit$
 
 We have escalated ourselves to the (hatter) user. Upon navigating to the `/home/hatter` directory, we find a `password.txt` file which contains a password for the (hatter) user. Checking for the rights of the user (hatter) with `sudo -l` does not give us much. Doing some basic enumeration reveals that perl has the following capability set: `cap_setuid+ep`. `perl` does not seem to run on the shell so we use the password obtained previously to get superuser by running `su hatter`(gid changes).
 
-## Privilege Escalation(to root)
+## Privilege escalation to (root)
 
 Since we need to abuse the setuid capability using perl, we can check for the same on [gtfobins](https://gtfobins.github.io/gtfobins/perl/). This gives us an entry like so.
 

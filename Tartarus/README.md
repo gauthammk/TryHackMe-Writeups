@@ -2,7 +2,7 @@
 
 _25th August 2020_
 
-## Nmap scan
+## Host enumeration
 
 The initial scan reports the following.
 
@@ -55,7 +55,7 @@ We can use the previously obtained usernames and passwords as the wordlist to br
 Upon login, a php file upload page is found. We can try to upload a php reverse shell from [pentestmonkey].
 Upon further analysis using gobuster, we find the reverse shell at the subdirectory `/images/uploads` and we can click on it while listening on our local machine using `nc -l <IP>`. As expected, we get a shell. After some poking around, we can find the user flag in `/home/d4rckh/user.txt`. On checking for rights using `sudo -l`, we find that our current user (www-data) has access to run `/var/www/gdb` as the user (thirtytwo).
 
-## Privilege Escalation
+## Privilege escalation
 
 We can escalate ourselves to \* using the following from gtfobins.
 
@@ -76,7 +76,7 @@ Now you can use git. Took a while to fix it but now its good :)
 
 On checking for rights using `sudo -l`, we find that our current user (thirtytwo) has access to run `/usr/bin/git` as the user (d4rckh).
 
-## Privilege Escalation to (d4rckh)
+## Privilege escalation to (d4rckh)
 
 We can escalate ourselves to the user (d4rckh) using the following from gtfobins.
 
@@ -88,7 +88,7 @@ sudo -u d4rckh /usr/bin/git help config
 
 Running the command `!bash`, we get a shell as the user (d4rckh). We see a file in `/home/d4rckh/` called `cleanup.py`. Checking the crontab shows that this script is scheduled to run every two minutes as the (root) user.
 
-## Privilege Escalation to (root)
+## Privilege escalation to (root)
 
 We can change `cleanup.py` to mark `/bin/bash` as a setuid binary. Since `/bin/bash` is owned by root, it will grant us access to run `/bin/bash` as a non root user on setting the uid. `cleanup.py` runs automatically and it's new contents are as follows.
 
