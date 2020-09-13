@@ -10,3 +10,4 @@ Write-ups and documentation for [TryHackMe](https://tryhackme.com/) challenges.
 | [Tartarus](Tartarus)       | 25/08/20           |
 | [Learn-Linux](Learn-Linux) | 13/09/20           |
 | [Pickle-Rick](Pickle-Rick) | 13/09/20           |
+| [Inclusion](Inclusion)     | 13/09/20           |
