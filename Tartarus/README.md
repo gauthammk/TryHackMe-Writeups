@@ -14,7 +14,7 @@ The initial scan reports the following.
 
 ### Analysis
 
-Since HTTP is running on port 80, we can proceed to view the web page on `http://<IP>/`
+Since HTTP is running on port 80, we can proceed to view the web page on `http://<IP>/`.
 The site is the default Apache page. However, robots.txt on the server shows us this.
 
 ```
