@@ -11,3 +11,9 @@ Write-ups and documentation for [TryHackMe](https://tryhackme.com/) challenges.
 | [Learn-Linux](Learn-Linux) | 13/09/20           |
 | [Pickle-Rick](Pickle-Rick) | 13/09/20           |
 | [Inclusion](Inclusion)     | 13/09/20           |
+
+## Resources
+
+- [GTFOBins](https://gtfobins.github.io)
+- [pentestmonkey cheatsheet](https://jaytaylor.com/notes/node/1520886669000.html)
+- [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
