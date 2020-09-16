@@ -11,6 +11,7 @@ Write-ups and documentation for [TryHackMe](https://tryhackme.com/) challenges.
 | [Learn-Linux](Learn-Linux) | 13/09/20           |
 | [Pickle-Rick](Pickle-Rick) | 13/09/20           |
 | [Inclusion](Inclusion)     | 13/09/20           |
+| [Lian_Yu](Lian_Yu)         | 15/09/20           |
 
 ## Resources
 
